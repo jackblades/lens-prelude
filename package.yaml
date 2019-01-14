@@ -1,0 +1,79 @@
+name:                lens-prelude
+version:             0.1.0.0
+github:              "githubuser/lens-prelude"
+license:             BSD3
+author:              "Author name here"
+maintainer:          "example@example.com"
+copyright:           "2019 Author name here"
+
+extra-source-files:
+- README.md
+- ChangeLog.md
+
+# Metadata used when publishing your package
+# synopsis:            Short description of your package
+# category:            Web
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description:         Please see the README on GitHub at <https://github.com/githubuser/lens-prelude#readme>
+
+default-extensions:
+- RankNTypes
+
+dependencies:
+- base >= 4.8 && < 5
+- transformers
+- lens
+- either
+- array
+- containers
+- unordered-containers
+- hashable
+- vector
+- mtl
+- time
+- bytestring
+- text
+- contravariant
+
+library:
+  source-dirs: src
+  exposed-modules:
+  - Prelude.Base
+  - Prelude.Transformers.Strict
+  - Prelude.Transformers.Strict.Types
+  - Prelude.Transformers.Lazy.Types
+  - Prelude.MTL.Types 
+  - Prelude.MTL
+  - Prelude.Lens.BasicInfix
+  - Prelude.Containers.Types
+  - Prelude.Bitpacked.Types
+  - Prelude.Bitpacked.Module
+  - Prelude.Tertullian
+  - Prelude.Galileo
+
+executables:
+  lens-prelude-exe:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    - -Wall -fwarn-tabs -O2
+    dependencies:
+    - lens-prelude
+    
+
+tests:
+  lens-prelude-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - lens-prelude

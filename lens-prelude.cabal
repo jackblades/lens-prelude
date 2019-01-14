@@ -1,46 +1,115 @@
-name:                lens-prelude
-version:             0.2
-synopsis:            Alternate prelude that exports lens combinators
-description:         Please see README.md
-homepage:            https://github.com/andrewthad/lens-prelude
-license:             BSD3
-license-file:        LICENSE
-author:              Andrew Martin
-maintainer:          andrew.thaddeus@gmail.com
-copyright:           2015 Andrew Martin
-category:            Web
-build-type:          Simple
-cabal-version:       >=1.10
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.31.1.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: ad8c21cfdfbfa2cad25fee1acd2af95d429abf4ad0c693974d067dae239736fe
+
+name:           lens-prelude
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/githubuser/lens-prelude#readme>
+homepage:       https://github.com/githubuser/lens-prelude#readme
+bug-reports:    https://github.com/githubuser/lens-prelude/issues
+author:         Author name here
+maintainer:     example@example.com
+copyright:      2019 Author name here
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    ChangeLog.md
+
+source-repository head
+  type: git
+  location: https://github.com/githubuser/lens-prelude
 
 library
-    hs-source-dirs:   src
-    exposed-modules: Prelude.Base
-                   , Prelude.Transformers.Strict
-                   , Prelude.Transformers.Strict.Types
-                   , Prelude.Transformers.Lazy.Types
-                   , Prelude.MTL.Types 
-                   , Prelude.MTL
-                   , Prelude.Lens.BasicInfix
-                   , Prelude.Containers.Types
-                   , Prelude.Bitpacked.Types
-                   , Prelude.Bitpacked.Module
-                   , Prelude.Tertullian
-                   , Prelude.Galileo
-    build-depends: base >= 4.8 && < 5
-                 , transformers
-                 , lens
-                 , either
-                 , array
-                 , containers
-                 , unordered-containers
-                 , hashable
-                 , vector
-                 , mtl
-                 , time
-                 , bytestring
-                 , text
-                 , contravariant
-    ghc-options:      -Wall -fwarn-tabs -O2
-    default-language:    Haskell2010
-    default-extensions:  RankNTypes
+  exposed-modules:
+      Prelude.Base
+      Prelude.Transformers.Strict
+      Prelude.Transformers.Strict.Types
+      Prelude.Transformers.Lazy.Types
+      Prelude.MTL.Types
+      Prelude.MTL
+      Prelude.Lens.BasicInfix
+      Prelude.Containers.Types
+      Prelude.Bitpacked.Types
+      Prelude.Bitpacked.Module
+      Prelude.Tertullian
+      Prelude.Galileo
+  other-modules:
+      Paths_lens_prelude
+  hs-source-dirs:
+      src
+  default-extensions: RankNTypes
+  build-depends:
+      array
+    , base >=4.8 && <5
+    , bytestring
+    , containers
+    , contravariant
+    , either
+    , hashable
+    , lens
+    , mtl
+    , text
+    , time
+    , transformers
+    , unordered-containers
+    , vector
+  default-language: Haskell2010
 
+executable lens-prelude-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_lens_prelude
+  hs-source-dirs:
+      app
+  default-extensions: RankNTypes
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N -Wall -fwarn-tabs -O2
+  build-depends:
+      array
+    , base >=4.8 && <5
+    , bytestring
+    , containers
+    , contravariant
+    , either
+    , hashable
+    , lens
+    , lens-prelude
+    , mtl
+    , text
+    , time
+    , transformers
+    , unordered-containers
+    , vector
+  default-language: Haskell2010
+
+test-suite lens-prelude-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_lens_prelude
+  hs-source-dirs:
+      test
+  default-extensions: RankNTypes
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      array
+    , base >=4.8 && <5
+    , bytestring
+    , containers
+    , contravariant
+    , either
+    , hashable
+    , lens
+    , lens-prelude
+    , mtl
+    , text
+    , time
+    , transformers
+    , unordered-containers
+    , vector
+  default-language: Haskell2010

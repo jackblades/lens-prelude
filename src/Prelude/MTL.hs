@@ -8,8 +8,8 @@ module Prelude.MTL
 
 import Control.Monad.Cont.Class as E 
 import Control.Monad.Error.Class as E 
-import Control.Monad.RWS.Class as E 
 import Control.Monad.Reader.Class as E 
 import Control.Monad.State.Class as E 
 import Control.Monad.Writer.Class as E 
+import Control.Monad.RWS.Class as E 
 

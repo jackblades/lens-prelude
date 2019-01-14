@@ -10,7 +10,7 @@ import Prelude.Lens.BasicInfix as E
 import Prelude.Transformers.Strict.Types as E
 import Prelude.MTL as E
 import Prelude.Bitpacked.Types as E
-import Prelude.Base as E
+import Prelude.Base as E hiding (fromLeft, fromRight)
 
 import Data.Hashable as E (Hashable)
 import Data.Time as E 
